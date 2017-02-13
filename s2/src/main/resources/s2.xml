@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<!-- 
+  - This file is included by the struts.xml file as an example
+  - of how to break up the configuration file into multiple files.
+-->
+<struts>
+    <package name="s2" namespace="/s2" extends="struts-default">
+        <interceptors>
+            <interceptor name="checkLogin" class="com.zz.s2.util.CheckLoginInterceptor"/>
+            <interceptor-stack name="myStack">
+                <interceptor-ref name="defaultStack"/>
+                <interceptor-ref name="checkLogin"/>
+            </interceptor-stack>
+        </interceptors>
+
+        <default-interceptor-ref name="myStack"/>
+
+        <default-action-ref name="login"/>
+
+        <action name="login" class="com.zz.s2.action.LoginAction" method="login">
+            <result name="input">/WEB-INF/s2/Login.jsp</result>
+            <result name="success">/WEB-INF/example/Missing.jsp</result>
+        </action>
+
+        <action name="test1" class="com.zz.s2.action.Test1Action">
+            <result name="input">/WEB-INF/s2/Login.jsp</result>
+            <result name="success">/WEB-INF/example/Missing.jsp</result>
+        </action>
+    </package>
+</struts>
