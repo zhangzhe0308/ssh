@@ -29,5 +29,10 @@
             <result name="input">/WEB-INF/s2/Login.jsp</result>
             <result name="success">/WEB-INF/example/Missing.jsp</result>
         </action>
+
+        <action name="validate" class="com.zz.s2.action.ValidateAction" method="go">
+            <result name="input">/validate.jsp</result>
+            <result name="success">/WEB-INF/example/Missing.jsp</result>
+        </action>
     </package>
 </struts>

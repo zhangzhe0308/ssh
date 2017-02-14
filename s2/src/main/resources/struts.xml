@@ -6,6 +6,10 @@
     <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
     <constant name="struts.devMode" value="true"/>
 
+    <!--i18N-->
+    <constant name="struts.custom.i18n.resources" value="message"/>
+    <constant name="struts.i18n.encoding" value="utf-8"/>
+
     <include file="example.xml"/>
     <include file="s2.xml"/>
 
