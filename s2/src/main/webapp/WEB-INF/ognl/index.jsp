@@ -1,1 +1,1 @@
-<% response.sendRedirect("test.action"); %>
+<% response.sendRedirect("test.action?msg=ttttt"); %>

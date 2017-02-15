@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * Created by zzhang on 2017/2/10.
  */
-@ParentPackage("s2")
+@ParentPackage("default")
 @Namespace("/anno")
 @InterceptorRef("defaultStack")
 public class AnnoLoginAction extends ActionSupport implements ModelDriven<Admin>, SessionAware {
@@ -26,7 +26,7 @@ public class AnnoLoginAction extends ActionSupport implements ModelDriven<Admin>
         this.admin = admin;
     }
 
-    @Action(value = "login", results = {@Result(name = "success", location = "/WEB-INF/example/Missing.jsp"), @Result(name = "input", location = "/WEB-INF/s2/Login.jsp")})
+    @Action(value = "test", results = {@Result(name = "success", location = "/WEB-INF/anno/result.jsp"), @Result(name = "input", location = "/WEB-INF/s2/Login.jsp")})
     public String login() {
         session.put("admin", admin);
         System.out.println("Save admin session");

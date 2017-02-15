@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<!-- 
+  - This file is included by the struts.xml file as an example
+  - of how to break up the configuration file into multiple files.
+-->
+<struts>
+    <package name="ognl" namespace="/ognl" extends="struts-default">
+
+
+        <default-action-ref name="index"/>
+
+        <action name="index">
+            <result type="redirectAction">
+                <param name="actionName">test?msg=zzzzz</param>
+            </result>
+        </action>
+
+        <action name="test" class="com.zz.ognl.OgnlObjAction" method="test">
+            <result name="success">/WEB-INF/ognl/ognlobj.jsp</result>
+        </action>
+    </package>
+</struts>

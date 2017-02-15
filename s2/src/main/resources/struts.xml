@@ -8,17 +8,18 @@
 
     <include file="example.xml"/>
     <include file="s2.xml"/>
+    <include file="ognl.xml"/>
 
     <package name="default" namespace="/" extends="struts-default">
 
         <default-action-ref name="index"/>
 
-        <!--<action name="index">
+        <action name="index">
             <result type="redirectAction">
                 <param name="actionName">HelloWorld</param>
                 <param name="namespace">/example</param>
             </result>
-        </action>-->
+        </action>
 
     </package>
 

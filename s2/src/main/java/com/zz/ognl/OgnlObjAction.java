@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 @InterceptorRef("defaultStack")
 public class OgnlObjAction extends ActionSupport {
     private User user;
+    private String msg;
 
     @Action(value = "test", results = {@Result(name = "success", location = "/WEB-INF/ognl/ognlobj.jsp")})
     public String test() throws Exception {
@@ -26,10 +27,14 @@ public class OgnlObjAction extends ActionSupport {
 
         HttpServletRequest request = ServletActionContext.getRequest();
 
-        request.setAttribute("msg", "Request message");
+//        request.setAttribute("msg", "Request message");
 
         user = new User();
         user.setUsername("zz");
+
+        System.out.println("this.msg is " + this.msg);
+        System.out.println("request.getParameter is " + request.getParameter("msg"));
+
         return SUCCESS;
     }
 
@@ -39,5 +44,13 @@ public class OgnlObjAction extends ActionSupport {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 }
